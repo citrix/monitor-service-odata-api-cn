@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Citrix Director SDK 参考指南">
+  
+  
+  <title>Citrix Director SDK</title>
+  
+
+  <link rel="shortcut icon" href="
+https://www.citrix.com/etc/designs/citrix/icon-favicon.png">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/highlight.css">
+  <link rel="stylesheet" href="./css/override.css" type="text/css" />
+  <link rel="stylesheet" href="./css/font-awesome.css" type="text/css" />
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "None";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/";
+  </script>
+  
+  <script src="./js/jquery-1.10.2.min.js"></script>
+  <script src="./js/bootstrap-3.0.3.min.js"></script>
+  <script src="./js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="./js/highlight.pack.js"></script>
+  <script src="./js/theme.js"></script>
+  <script src="./js/base.js"></script>
+  <script src="./js/custom.js"></script>
+  <script src="./js/nav.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document" data-spy="scroll" data-target=".bs-sidebar">
+
+	<div class="header-top">
+		<div class="header-top-left">
+			<a href="http://citrix.github.io" class="logo-position"><img height="60" src="https://thumbnail-ec2.sharefile.com/thumbnail.aspx?encparams=ypL2J0l-In6gqXJ7yeyKP8A1rqwKMH-C8-nfkJcHJNIN7Y0yZiJsYOcUe-uc0YeZzWLQSFSd1FnuMHPa30XSSINHuGOA8nvvnBT5WmjGlKvd5mxJ4IfT7iTVyHELwhWQiNCznPCiIFyhkA78uKX77PlU2iyhM4YdRM1NKabBe-4wXuiFJsbtAxyJ2UukO_E2ZSf1W3l75Dw8G0zflVkT-EFqyx1zSGId0qzLjm6nzJ8dA9zo-1AJzUisdzmGMzHOq_LMsOWyaalvmcWvCkl-q10GBSbfekfTIFW9LpZNYjkLNSnK8rcwNjWVr_jYayrGjIj2e5dDIMiDj3NRvW51AvHRjxYH9xRRRtY$" target="_blank" class="logo-citrix"><span style="color:#fff;font-size: 20px;position: relative;top:4px;left: 5px">SDK Reference</span></a>
+		</div>
+		<div class="header-top-right">
+			<ul>
+			<!--	<li class="list-inline home"><a href=".">HOME</a></li>
+				<li class="list-inline support"><a href="http://support.citrix.com">SUPPORT</a></li>-->
+				<form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+            <li class="list-inline support"><input name="q" id="txtName" type="text" placeholder="Search SDKs"
+            class="searchdocs">
+<a class="fa fa-search errspan"></a></li>
+</form>
+				<!--<li class="list-inline"><a href="http://citrix.com/download">DOWNLOADS</a></li>-->
+			</ul>
+
+		</div>
+	</div>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+	<i class="fa fa-search"></i>
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" role="navigation" aria-label="main navigation">
+			<div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#_1">简介</a></li>
+        
+    
+        <li class="main "><a href="#api">可使用 API 获得的数据</a></li>
+        
+    
+        <li class="main "><a href="#monitor-service">如何访问 Monitor Service 数据</a></li>
+        
+            <li><a href="#_2">数据访问权限</a></li>
+        
+            <li><a href="#_3">数据访问安全性</a></li>
+        
+            <li><a href="#_4">数据访问协议</a></li>
+        
+    
+        <li class="main "><a href="#_5">示例</a></li>
+        
+            <li><a href="#1-xml">示例 1 - 原始 XML</a></li>
+        
+            <li><a href="#2-powerpivot-with-excel">示例 2 - PowerPivot with Excel</a></li>
+        
+            <li><a href="#3-linqpad">示例 3 - LinqPad</a></li>
+        
+            <li><a href="#4">示例 4 – 客户端库</a></li>
+        
+    
+        <li class="main "><a href="#_6">附录：</a></li>
+        
+            <li><a href="#url">可用数据集的 URL</a></li>
+        
+    
+    </ul>
+</div>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+         <!-- <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Index</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/ajitchelat/AppDNA-SDK.git" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div> -->
+          <div role="main">
+            <div class="section">
+             
+                <h1 id="_1"><a class="toclink" href="#_1">简介</a></h1>
+<p>Monitor Service API 在使用在处理和合并期间填充的 Windows Communication Foundation (WCF) Data Services 的 SQL Server 数据库的基础上构建。</p>
+<p>Monitor Service API 使用开放数据协议 (OData)。此协议是一个用于查询和更新数据的 Web 协议，并基于诸如 HTTP 之类的 Web 技术而构建。</p>
+<p>Monitor Service API 是一个基于 REST 的 API，可以使用 OData 使用者程序进行访问。OData 使用者程序是占用使用 OData 协议显示的数据的应用程序。</p>
+<p>您可以使用 API 执行以下操作：</p>
+<ul>
+<li>
+<p>分析历史趋势以便进行未来规划</p>
+</li>
+<li>
+<p>对连接失败和计算机故障进行细致的故障排除</p>
+</li>
+<li>
+<p>提取信息以用于其他工具和流程；例如，可以使用 Microsoft Excel 的 PowerPivot 表以不同的方式显示数据</p>
+</li>
+<li>
+<p>基于 API 提供的数据构建自定义用户界面</p>
+</li>
+</ul>
+<h1 id="api"><a class="toclink" href="#api">可使用 API 获得的数据</a></h1>
+<p>以下类型的数据可通过 Monitor Service API 获得：</p>
+<ul>
+<li>
+<p><span id="par_richtext_0" class="anchor"></span>与连接故障相关的数据</p>
+</li>
+<li>
+<p>处于故障状态的计算机</p>
+</li>
+<li>
+<p>会话使用情况</p>
+</li>
+<li>
+<p>登录持续时间</p>
+</li>
+<li>
+<p>负载平衡数据</p>
+</li>
+<li>
+<p>应用于计算机的修补程序</p>
+</li>
+<li>
+<p>托管应用程序的使用情况</p>
+</li>
+</ul>
+<p>有关 Monitor Service 架构的详细信息，请参阅 <a href="http://docs.citrix.com/en-us/xenapp-and-xendesktop/7-5/cds-ms-odata-wrapper/cds-ms-odata-data.html">Monitor Service 架构</a>。</p>
+<p>要确定 Monitor Service OData API 返回的值，请参阅 <a href="http://support.citrix.com/help/monitorserviceapi/7.6/html/d787ce1d-02c0-6165-fc99-c46592a5d112.htm">Citrix Monitor 数据模型</a></p>
+<h1 id="monitor-service"><a class="toclink" href="#monitor-service">如何访问 Monitor Service 数据</a></h1>
+<h2 id="_2"><a class="toclink" href="#_2">数据访问权限</a></h2>
+<p>您必须是 XenApp 或 XenDesktop 管理员，才能使用 Monitor Service OData API。 要调用 API，您需要具有只读权限；但是，返回的数据由 XenApp 或 XenDesktop 管理员角色和权限决定。</p>
+<p>例如，交付组管理员可以调用 Monitor Service API，但他们可以获取的数据由使用 Citrix Studio 设置的交付组访问权限控制。</p>
+<p>有关 XenApp 或 XenDesktop 管理员角色和权限的详细信息，请参阅<a href="http://docs.citrix.com/en-us/xenapp-and-xendesktop/7-6/xad-security-article/xad-delegated-admin.html">委派管理</a>。</p>
+<h2 id="_3"><a class="toclink" href="#_3">数据访问安全性</a></h2>
+<p>如果选择使用 SSL，则必须在站点内的所有 Delivery Controller 上配置 SSL。不能同时使用 SSL 和非 SSL。</p>
+<p>要使用 SSL 为 Monitor Service 端点提供安全保护，必须执行以下配置。 某些步骤需要在每个站点一次性完成，其余步骤则必须在站点中托管 Monitor Service 的每台计算机上执行。 各步骤的说明如下所述。</p>
+<p><strong><em>第 1 部分：在系统中注册证书</em></strong></p>
+<ol>
+<li>
+<p><span id="par_richtext_2" class="anchor"></span>使用可信证书管理器创建证书。证书必须与您希望用于 OData SSL 的计算机上的端口相关联。</p>
+</li>
+<li>
+<p>配置 Monitor Service，以使用此端口进行 SSL 通信。操作步骤取决于您的环境及其与证书结合使用的方式。下例说明了如何配置端口 449：</p>
+</li>
+<li>
+<p>将证书与某个端口相关联：</p>
+</li>
+</ol>
+<blockquote>
+<p>netsh http add sslcert ipport=0.0.0.0:449 certhash=97bb629e50d556c80528f4991721ad4f28fb74e9</p>
+<p>appid='{00000000-0000-0000-0000-000000000000}'</p>
+</blockquote>
+<p><strong>提示</strong>：<em>在 PowerShell 命令窗口中，请务必用单引号引起 appID 中的 GUID（如上文所示），否则命令将不起作用。 请注意，在此示例中添加的换行符只是为了方便阅读。</em></p>
+<p><strong><em>第 2 部分：修改 Monitor Service 的配置设置</em></strong></p>
+<ol>
+<li>
+<p>在站点中的任意 Delivery Controller 上，运行以下 PowerShell 命令一次。此命令删除了 Monitor Service 在 Configuration Service 中的注册。</p>
+<p>asnp citrix.*</p>
+<p>\$serviceGroup = get-configregisteredserviceinstance -servicetype
+ Monitor | Select -First 1 ServiceGroupUid</p>
+<p>remove-configserviceGroup -ServiceGroupUid
+ \$serviceGroup.ServiceGroupUid</p>
+</li>
+<li>
+<p>在站点中的所有 Controller 上执行以下操作：</p>
+</li>
+<li>
+<p>使用 cmd 提示符查找已安装的 Citrix Monitor 目录（通常位于 C:\Program Files\Citrix\Monitor\Service 中）。在该目录下，运行：</p>
+<p>Citrix.Monitor.Exe -CONFIGUREFIREWALL -ODataPort 449 -RequireODataSsl</p>
+</li>
+<li>
+<p>运行以下 PowerShell 命令：</p>
+<p>asnp citrix.* (if not already run within this window)</p>
+<p>get-MonitorServiceInstance | register-ConfigServiceInstance</p>
+<p>Get-ConfigRegisteredServiceInstance -ServiceType Config |
+Reset-MonitorServiceGroupMembership</p>
+</li>
+</ol>
+<h2 id="_4"><a class="toclink" href="#_4">数据访问协议</a></h2>
+<p>Monitor Service API 是一个基于 REST 的 API，可以使用 OData 使用者程序进行访问。 OData 使用者程序是占用使用 OData 协议显示的数据的应用程序。 从简单的 Web 浏览器到可利用 OData 协议的所有功能的自定义应用程序，OData 使用者程序的复杂程度各不相同。</p>
+<p>Monitor Service 数据模型的每一部分都可访问，并且可以根据 URL 进行过滤。OData 以 URL 格式提供查询语言，可用于从服务检索条目。</p>
+<p>查询在服务器端进行处理，并且可以使用客户端上的 OData 协议进行进一步过滤。<span id="par_richtext_7" class="anchor"></span>建模数据分为以下三类：聚合数据（汇总表）、对象（计算机、会话等）的当前状态和日志数据，日志数据（实际上是指历史事件，例如连接）。<span id="par_richtext_8" class="anchor"></span><strong>注意</strong>：OData 协议不支持枚举；在其位置使用整数。 要确定 Monitor Service OData API 返回的值，请参阅<strong> </strong><a href="http://support.citrix.com/help/monitorserviceapi/7.6/">Monitor Service 数据模型</a>。</p>
+<h3 id="odata"><a class="toclink" href="#odata">OData 协议是什么？</a></h3>
+<p><a href="http://www.odata.org/">OData</a>（开放数据协议）是一种 <a href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=odata">OASIS 标准</a>，用于定义构建和使用 RESTful API 的一组最佳实践。 OData 可帮助您在构建 RESTful API 的过程中重点关注业务逻辑，不必担心用于定义请求和响应头、状态代码、HTTP 方法、URL 约定、媒体类型、负载格式、查询选项等各种方法。</p>
+<p>OData 还提供跟踪变更、定义可重用过程的功能/操作以及发送异步/批处理请求的指导。</p>
+<p>OData RESTful API 易于使用。通过 OData 元数据（即，API 数据模型的计算机可读描述），可以创建功能强大的通用客户端代理和工具。</p>
+<p>OData 使用者程序：<a href="http://www.odata.org/ecosystem/#consumers">http://www.odata.org/ecosystem/#consumers</a></p>
+<p>客户端库：<a href="http://www.odata.org/libraries/">http://www.odata.org/libraries/</a></p>
+<p>基础教程：<a href="http://www.odata.org/getting-started/basic-tutorial/">http://www.odata.org/getting-started/basic-tutorial/</a></p>
+<h3 id="wcf"><a class="toclink" href="#wcf">WCF 是什么？</a></h3>
+<p>OData 提供程序 Citrix Monitor Service API 是通过 WCF 实现的。</p>
+<p>Windows Communication Foundation (WCF) 是 Microsoft 用于构建面向服务的应用程序的统一编程模型。</p>
+<p>有关 WCF 的更多详细信息，请参阅 <a href="https://msdn.microsoft.com/library/dd456779.aspx">Windows Communication Foundation</a></p>
+<h1 id="_5"><a class="toclink" href="#_5">示例</a></h1>
+<p>以下示例介绍如何使用 OData API 导出 Monitor Service 数据。本主题还提供了可用数据集的 URL 列表。</p>
+<h2 id="1-xml"><a class="toclink" href="#1-xml">示例 1 - 原始 XML</a></h2>
+<ol>
+<li>
+<p>将每个数据集的 URL 置于正在使用 XenApp 或 XenDesktop 站点的相应管理权限运行的 Web 浏览器中。 Citrix 建议使用装有 Advanced Rest Client 加载项的 Chrome 浏览器。</p>
+</li>
+<li>
+<p>查看来源。</p>
+</li>
+</ol>
+<h2 id="2-powerpivot-with-excel"><a class="toclink" href="#2-powerpivot-with-excel">示例 2 - PowerPivot with Excel</a></h2>
+<ol>
+<li>
+<p>安装 Microsoft Excel。</p>
+</li>
+<li>
+<p>按照此处的说明安装 PowerPivot（具体取决于您使用的版本是 2010 还是 2013）：<a href="https://support.office.com/en-us/article/Start-Power-Pivot-in-Microsoft-Excel-2013-add-in-a891a66d-36e3-43fc-81e8-fc4798f39ea8">https://support.office.com/en-us/article/Start-Power-Pivot-in-Microsoft-Excel-2013-add-in-a891a66d-36e3-43fc-81e8-fc4798f39ea8.</a></p>
+</li>
+<li>
+<p>打开 Excel（使用 XenApp 或 XenDesktop 站点的相应管理权限运行）。</p>
+</li>
+</ol>
+<h3 id="excel-2010"><a class="toclink" href="#excel-2010">使用 Excel 2010</a></h3>
+<ol>
+<li>
+<p>单击“PowerPivot”选项卡。</p>
+</li>
+<li>
+<p>单击 PowerPivot 窗口。</p>
+</li>
+<li>
+<p>单击功能区中的<strong>来自数据馈送</strong>。</p>
+</li>
+<li>
+<p>选择友好的连接名称（例如：XenDesktop Monitoring Data）并输入数据馈送 URL：http://{dc-host}/Citrix/Monitor/OData/v1/Data（如果使用的是 SSL，请输入 https:）。</p>
+</li>
+<li>
+<p>单击<strong>下一步</strong>。</p>
+</li>
+<li>
+<p>选择要导入到 Excel 的表并单击<strong>完成</strong>。这样便可检索到数据。</p>
+</li>
+</ol>
+<h3 id="excel-2013"><a class="toclink" href="#excel-2013">使用 Excel 2013</a></h3>
+<ol>
+<li>
+<p>单击“数据”选项卡。</p>
+</li>
+<li>
+<p>依次选择“自其他来源”&gt;“来自 OData 数据馈送”</p>
+</li>
+<li>
+<p>输入数据馈送 URL：http://{dc-host}/Citrix/Monitor/OData/v1/Data（如果使用的是 SSL，请输入 https:）并单击<strong>下一步</strong>。</p>
+</li>
+<li>
+<p>选择要导入到 Excel 的表并单击<strong>下一步</strong>。</p>
+</li>
+<li>
+<p>接受默认名称或自定义名称，然后单击<strong>完成</strong>。</p>
+</li>
+<li>
+<p>选择<strong>仅连接</strong>或<strong>透视报表</strong>。这样便可检索到数据。</p>
+</li>
+</ol>
+<p>现在，您可以使用 PowerPivot 查看和分析带有数据透视表和数据透视图的数据。 有关详细信息，请参阅 Learning Center：<a href="http://www.microsoft.com/en-us/bi/LearningCenter.aspx">http://www.microsoft.com/en-us/bi/LearningCenter.aspx</a></p>
+<h2 id="3-linqpad"><a class="toclink" href="#3-linqpad">示例 3 - LinqPad</a></h2>
+<ol>
+<li>
+<p><span id="par_richtext_10" class="anchor"></span>从 <a href="http://www.linqpad.net/">http://www.linqpad.net</a> 下载并安装最新版本的 LinqPad。</p>
+</li>
+<li>
+<p>使用 XenApp 或 XenDesktop 站点的相应管理权限运行 LinqPad。</p>
+</li>
+</ol>
+<blockquote>
+<p>提示：最简便的方法是在 Delivery Controller 上下载、安装并运行。</p>
+</blockquote>
+<ol>
+<li>
+<p>单击“添加连接”链接。</p>
+</li>
+<li>
+<p>选择 WCF Data Services 5.1 (OData 3) 并单击<strong>下一步</strong>。</p>
+</li>
+<li>
+<p>输入数据馈送 URL：<span id="OLE_LINK2" class="anchor"><span
+id="OLE_LINK3"
+class="anchor"></span></span>http://{dc-host}/Citrix/Monitor/OData/v1/Data（如果使用的是 SSL，请输入 https:）。 如有必要，请输入用户名和密码以访问 Delivery Controller。 单击<strong>确定</strong>。</p>
+</li>
+<li>
+<p>现在您可以针对数据馈送运行 LINQ 查询，并根据需要导出数据。 例如，在“目录”上单击鼠标右键并选择 <strong>Catalogs.Take(100)</strong>。 此操作将返回数据库中前 100 个目录。 选择“导出”&gt;“导出到具有格式设置的 Excel”。</p>
+</li>
+</ol>
+<h2 id="4"><a class="toclink" href="#4">示例 4 – 客户端库</a></h2>
+<p>Citrix Monitor Service 当前支持 OData 协议 V1-V3。因此，在各种编程平台中实现 OData 使用者程序时，请选择正确的客户端库。</p>
+<h3 id="41-c35net"><a class="toclink" href="#41-c35net">示例 4.1 – C#/.NET</a></h3>
+<p><strong><em>从 .NET 客户端调用 OData 服务 (C#)</em></strong></p>
+<p><a href="https://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/odata-v3/calling-an-odata-service-from-a-net-client">https://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/odata-v3/calling-an-odata-service-from-a-net-client</a></p>
+<p>代码片段： <br /></p>
+<div class="codehilite"><pre><span></span>    <span class="cm">/* GET http://{dc-host}/Citrix/Monitor/Odata/v3/Data/Catalogs */</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">string</span> <span class="nf">ListAllCatalgs</span><span class="o">(</span><span class="n">MonitorService</span><span class="o">.</span><span class="na">DatabaseContext</span> <span class="n">context</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+        <span class="n">Foreach</span> <span class="o">(</span><span class="n">var</span> <span class="n">c</span> <span class="n">in</span> <span class="n">context</span><span class="o">.</span><span class="na">Catalogs</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="n">sb</span><span class="o">.</span><span class="na">Append</span><span class="o">(</span><span class="n">DisplayCatalog</span><span class="o">(</span><span class="n">c</span><span class="o">));</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">sb</span><span class="o">.</span><span class="na">ToString</span><span class="o">();</span>
+    <span class="o">}</span>
+</pre></div>
+
+
+<p><br /></p>
+<div class="codehilite"><pre><span></span>    <span class="cm">/* GET http://Url/Machines()?$select=Name, IPAddress */</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">ListMachineNames</span><span class="o">(</span><span class="n">MonitorService</span><span class="o">.</span><span class="na">DatabaseContext</span> <span class="n">context</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">var</span> <span class="n">machines</span> <span class="o">=</span> <span class="n">from</span> <span class="n">m</span> <span class="n">in</span> <span class="n">context</span><span class="o">.</span><span class="na">Machines</span> <span class="n">select</span> <span class="k">new</span> <span class="o">{</span> <span class="n">Name</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="na">Name</span><span class="o">,</span> <span class="n">IP</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="na">IPAddress</span> <span class="o">};</span>
+        <span class="n">foreach</span> <span class="o">(</span><span class="n">var</span> <span class="n">m</span> <span class="n">in</span> <span class="n">machines</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">m</span><span class="o">.</span><span class="na">Name</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">m</span><span class="o">.</span><span class="na">IP</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+            <span class="o">{</span>
+                <span class="n">Console</span><span class="o">.</span><span class="na">WriteLine</span><span class="o">(</span><span class="s">&quot;{0} : {1}&quot;</span><span class="o">,</span> <span class="n">m</span><span class="o">.</span><span class="na">Name</span><span class="o">,</span> <span class="n">m</span><span class="o">.</span><span class="na">IP</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</pre></div>
+
+
+<p><br /></p>
+<div class="codehilite"><pre><span></span>    <span class="cm">/* use the LINQ Skip and Take methods to skips the first 40 results and takes the next 10 */</span>
+    <span class="cm">/* GET http://{dc-host}/Citrix/Monitor/Odata/v3/Machines()?$orderby=Id desc&amp;$skip=40&amp;$top=10 */</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">ListMachinesPaged</span><span class="o">(</span><span class="n">MonitorService</span><span class="o">.</span><span class="na">DatabaseContext</span> <span class="n">context</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">var</span> <span class="n">machines</span> <span class="o">=</span>
+            <span class="o">(</span><span class="n">from</span> <span class="n">m</span> <span class="n">in</span> <span class="n">context</span><span class="o">.</span><span class="na">Machines</span>
+             <span class="n">orderby</span> <span class="n">m</span><span class="o">.</span><span class="na">Id</span> <span class="n">descending</span>
+             <span class="n">select</span> <span class="n">m</span><span class="o">).</span><span class="na">Skip</span><span class="o">(</span><span class="mi">40</span><span class="o">).</span><span class="na">Take</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
+
+        <span class="n">foreach</span> <span class="o">(</span><span class="n">var</span> <span class="n">m</span> <span class="n">in</span> <span class="n">machines</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="n">Console</span><span class="o">.</span><span class="na">WriteLine</span><span class="o">(</span><span class="s">&quot;{0}, {1}&quot;</span><span class="o">,</span> <span class="n">m</span><span class="o">.</span><span class="na">Name</span><span class="o">,</span> <span class="n">m</span><span class="o">.</span><span class="na">IPAddress</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</pre></div>
+
+
+<p><br /></p>
+<div class="codehilite"><pre><span></span>    <span class="cm">/* GET http://Url/Catalogs()?$filter=Name eq &#39;$Name&#39;*/</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">ListCatalogByName</span><span class="o">(</span><span class="n">MonitorService</span><span class="o">.</span><span class="na">DatabaseContext</span> <span class="n">context</span><span class="o">,</span> <span class="n">string</span> <span class="n">name</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">var</span> <span class="n">catalog</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="na">Catalogs</span><span class="o">.</span><span class="na">Where</span><span class="o">(</span><span class="n">c</span> <span class="o">=&gt;</span> <span class="n">c</span><span class="o">.</span><span class="na">Name</span> <span class="o">==</span> <span class="n">name</span><span class="o">).</span><span class="na">SingleOrDefault</span><span class="o">();</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">catalog</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="n">DisplayCatalog</span><span class="o">(</span><span class="n">catalog</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</pre></div>
+
+
+<p><br /></p>
+<h1 id="_6"><a class="toclink" href="#_6">附录：</a></h1>
+<h2 id="url"><a class="toclink" href="#url">可用数据集的 URL</a></h2>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>http://{dc-host}/Citrix/Monitor/OData/v1/Data/Catalogs</td>
+<td>站点中的目录映像</td>
+</tr>
+<tr>
+<td>http://{dc-host}/Citrix/Monitor/OData/v1/Data/ConnectionFailureCategories</td>
+<td>连接故障类型分组</td>
+</tr>
+<tr>
+<td>http://{dc-host}/Citrix/Monitor/OData/v1/Data/ConnectionFailureLogs</td>
+<td>站点中每个连接故障的日志</td>
+</tr>
+<tr>
+<td>http://{dc-host}/Citrix/Monitor/OData/v1/Data/Connections</td>
+<td>表示会话的初始连接或重新连接</td>
+</tr>
+<tr>
+<td>http://{dc-host}/Citrix/Monitor/OData/v1/Data/DesktopGroups</td>
+<td>站点中的交付组</td>
+</tr>
+<tr>
+<td>http://{dc-host}/Citrix/Monitor/OData/v1/Data/FailureLogSummaries</td>
+<td>按时间段和交付组记录的故障（连接/计算机）计数</td>
+</tr>
+<tr>
+<td>http://{dc-host}/Citrix/Monitor/OData/v1/Data/Hypervisors</td>
+<td>站点中的主机（虚拟机管理程序）</td>
+</tr>
+<tr>
+<td>http://{dc-host}/Citrix/Monitor/OData/v1/Data/LoadIndexes</td>
+<td>从 Virtual Delivery Agent (VDA) 接收到的负载指数数据</td>
+</tr>
+<tr>
+<td>http://{dc-host}/Citrix/Monitor/OData/v1/Data/LoadIndexSummaries</td>
+<td>按时间段和计算机记录的负载指数平均值</td>
+</tr>
+<tr>
+<td>http://{dc-host}/Citrix/Monitor/OData/v1/Data/MachineFailureLogs</td>
+<td>站点中按开始日期和结束日期记录的每个计算机故障的日志</td>
+</tr>
+<tr>
+<td>http://{dc-host}/Citrix/Monitor/OData/v1/Data/Machines</td>
+<td>站点中的计算机</td>
+</tr>
+<tr>
+<td>http://{dc-host}/Citrix/Monitor/OData/v1/Data/SessionActivitySummaries</td>
+<td>按时间段和交付组记录的会话计数和登录数据</td>
+</tr>
+<tr>
+<td>http://{dc-host}/Citrix/Monitor/OData/v1/Data/Sessions</td>
+<td>表示连接到桌面的用户</td>
+</tr>
+<tr>
+<td>http://{dc-host}/Citrix/Monitor/OData/v1/Data/TaskLogs</td>
+<td>已作为内部 Monitoring Service 的一部分运行的所有任务及其状态的日志</td>
+</tr>
+<tr>
+<td>http://{dc-host}/Citrix/Monitor/OData/v1/Data/Users</td>
+<td>已在站点中启动会话的用户</td>
+</tr>
+</tbody>
+</table>
+              
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<!--<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/ajitchelat/AppDNA-SDK.git" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+	<div class="footer-right">
+		<ul class="social-links">
+			<li class="list-inline"><a href="https://twitter.com/citrix"><i class="fa fa-twitter"></i>@citrix</a></li>
+			<li class="list-inline"><a href="mailto:support@citrix.com"><i class="fa fa-envelope-o"></i>support@citrix.com</a></li>
+		</ul>
+		<ul class="inner-pages">
+			<li class="list-inline"><a href="http://citrix.com/about/legal">Privacy and Terms</li>
+		</ul>
+	</div>
+</div>-->
+
+</body>
+</html>
+
+<!--
+MkDocs version : 0.15.3
+Build Date UTC : 2017-01-10 04:17:59.504895
+-->

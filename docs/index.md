@@ -1,6 +1,6 @@
 # 简介
 
-Monitor Service API 在使用在处理和合并期间填充的 Windows Communication Foundation (WCF) Data Services 的 SQL Server 数据库的基础上构建。
+Monitor Service API 在使用 Windows Communication Foundation (WCF) Data Services（在处理和合并期间填充）的 SQL Server 数据库的基础上构建。
 
 Monitor Service API 使用开放数据协议 (OData)。此协议是一个用于查询和更新数据的 Web 协议，并基于诸如 HTTP 之类的 Web 技术而构建。
 
@@ -20,7 +20,7 @@ Monitor Service API 是一个基于 REST 的 API，可以使用 OData 使用者�
 
 以下类型的数据可通过 Monitor Service API 获得：
 
-- <span id="par_richtext_0" class="anchor"></span>与连接故障相关的数据
+- 与连接故障相关的数据
 
 - 处于故障状态的计算机
 
@@ -42,7 +42,7 @@ Monitor Service API 是一个基于 REST 的 API，可以使用 OData 使用者�
 
 ## 数据访问权限
 
-您必须是 XenApp 或 XenDesktop 管理员，才能使用 Monitor Service OData API。 要调用 API，您需要具有只读权限；但是，返回的数据由 XenApp 或 XenDesktop 管理员角色和权限决定。
+要使用 Monitor Service OData API，您必须是 XenApp 或 XenDesktop 管理员。 要调用 API，您需要具有只读权限；但是，返回的数据由 XenApp 或 XenDesktop 管理员角色和权限决定。
 
 例如，交付组管理员可以调用 Monitor Service API，但他们可以获取的数据由使用 Citrix Studio 设置的交付组访问权限控制。
 
@@ -52,11 +52,11 @@ Monitor Service API 是一个基于 REST 的 API，可以使用 OData 使用者�
 
 如果选择使用 SSL，则必须在站点内的所有 Delivery Controller 上配置 SSL。不能同时使用 SSL 和非 SSL。
 
-要使用 SSL 为 Monitor Service 端点提供安全保护，必须执行以下配置。 某些步骤需要在每个站点一次性完成，其余步骤则必须在站点中托管 Monitor Service 的每台计算机上执行。 各步骤的说明如下所述。
+要使用 SSL 为 Monitor Service 端点提供安全保护，必须执行以下配置。 有些步骤需要在每个站点一次性完成，其余步骤则须在站点中托管 Monitor Service 的计算机上执行。 各步骤的说明如下所述。
 
 ***第 1 部分：在系统中注册证书***
 
-  1. <span id="par_richtext_2" class="anchor"></span>使用可信证书管理器创建证书。证书必须与您希望用于 OData SSL 的计算机上的端口相关联。
+  1. 使用可信证书管理器创建证书。证书必须与您希望用于 OData SSL 的计算机上的端口相关联。
 
   2. 配置 Monitor Service，以使用此端口进行 SSL 通信。操作步骤取决于您的环境及其与证书结合使用的方式。下例说明了如何配置端口 449：
 
@@ -100,11 +100,15 @@ Monitor Service API 是一个基于 REST 的 API，可以使用 OData 使用者�
 
 ## 数据访问协议
 
-Monitor Service API 是一个基于 REST 的 API，可以使用 OData 使用者程序进行访问。 OData 使用者程序是占用使用 OData 协议显示的数据的应用程序。 从简单的 Web 浏览器到可利用 OData 协议的所有功能的自定义应用程序，OData 使用者程序的复杂程度各不相同。
+Monitor Service API 是一款基于 REST 的 API，可以使用 OData 使用者程序进行访问。 OData 使用者程序是占用使用 OData 协议显示的数据的应用程序。 从简单的 Web 浏览器到可利用 OData 协议的所有功能的自定义应用程序，OData 使用者程序的复杂程度各不相同。
 
 Monitor Service 数据模型的每一部分都可访问，并且可以根据 URL 进行过滤。OData 以 URL 格式提供查询语言，可用于从服务检索条目。
 
-查询在服务器端进行处理，并且可以使用客户端上的 OData 协议进行进一步过滤。<span id="par_richtext_7" class="anchor"></span>建模数据分为以下三类：聚合数据（汇总表）、对象（计算机、会话等）的当前状态和日志数据，日志数据（实际上是指历史事件，例如连接）。<span id="par_richtext_8" class="anchor"></span>**注意**：OData 协议不支持枚举；在其位置使用整数。 要确定 Monitor Service OData API 返回的值，请参阅** **[Monitor Service 数据模型](http://support.citrix.com/help/monitorserviceapi/7.6/)。
+查询在服务器端进行处理，并且可以使用客户端上的 OData 协议进行进一步过滤。
+
+建模数据分为以下三类：聚合数据（汇总表）、对象（计算机、会话等）的当前状态和日志数据，日志数据实际上是指历史事件（如连接）。
+
+**注意**：OData 协议不支持枚举；在其位置使用整数。 要确定 Monitor Service OData API 返回的值，请参阅[Monitor Service 数据模型](http://support.citrix.com/help/monitorserviceapi/7.6/)。
 
 ### OData 协议是什么？
 
@@ -142,7 +146,7 @@ Windows Communication Foundation (WCF) 是 Microsoft 用于构建面向服务的
 
   1. 安装 Microsoft Excel。
 
-  2. 按照此处的说明安装 PowerPivot（具体取决于您使用的版本是 2010 还是 2013）：[https://support.office.com/en-us/article/Start-Power-Pivot-in-Microsoft-Excel-2013-add-in-a891a66d-36e3-43fc-81e8-fc4798f39ea8.](https://support.office.com/en-us/article/Start-Power-Pivot-in-Microsoft-Excel-2013-add-in-a891a66d-36e3-43fc-81e8-fc4798f39ea8)
+  2. 请按照以下站点上的说明安装 PowerPivot（取决于您是否使用 2010 或 2013）：[https://support.office.com/en-us/article/Start-Power-Pivot-in-Microsoft-Excel-2013-add-in-a891a66d-36e3-43fc-81e8-fc4798f39ea8.]。
 
   3. 打开 Excel（使用 XenApp 或 XenDesktop 站点的相应管理权限运行）。
 
@@ -178,9 +182,9 @@ Windows Communication Foundation (WCF) 是 Microsoft 用于构建面向服务的
 
 ## 示例 3 - LinqPad
 
-  1. <span id="par_richtext_10" class="anchor"></span>从 [http://www.linqpad.net](http://www.linqpad.net/) 下载并安装最新版本的 LinqPad。
+  1. 从 [http://www.linqpad.net](http://www.linqpad.net/) 下载并安装最新版本的 LinqPad。
 
-  2. 使用 XenApp 或 XenDesktop 站点的相应管理权限运行 LinqPad。
+  2. 通过 XenApp 或 XenDesktop 站点的相应管理权限运行 LinqPad。
 
 > 提示：最简便的方法是在 Delivery Controller 上下载、安装并运行。
 
@@ -188,9 +192,7 @@ Windows Communication Foundation (WCF) 是 Microsoft 用于构建面向服务的
 
   2. 选择 WCF Data Services 5.1 (OData 3) 并单击**下一步**。
 
-  3. 输入数据馈送 URL：<span id="OLE_LINK2" class="anchor"><span
-id="OLE_LINK3"
-class="anchor"></span></span>http://{dc-host}/Citrix/Monitor/OData/v1/Data（如果使用的是 SSL，请输入 https:）。 如有必要，请输入用户名和密码以访问 Delivery Controller。 单击**确定**。
+  3. 输入数据馈送 URL http://{dc-host}/Citrix/Monitor/OData/v1/Data（如果正在使用 SSL，则输入 https://{dc-host}/Citrix/Monitor/OData/v1/Data）。 如有必要，请输入用户名和密码以访问 Delivery Controller。 单击**确定**。
 
   4. 现在您可以针对数据馈送运行 LINQ 查询，并根据需要导出数据。 例如，在“目录”上单击鼠标右键并选择 **Catalogs.Take(100)**。 此操作将返回数据库中前 100 个目录。 选择“导出”>“导出到具有格式设置的 Excel”。
 
@@ -204,75 +206,127 @@ Citrix Monitor Service 当前支持 OData 协议 V1-V3。因此，在各种编�
 
 <https://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/odata-v3/calling-an-odata-service-from-a-net-client>
 
-代码片段： <br />
+代码片段：   
 
-```java
-    /* GET http://{dc-host}/Citrix/Monitor/Odata/v3/Data/Catalogs */
-    private static string ListAllCatalgs(MonitorService.DatabaseContext context)
-    {
-        StringBuilder sb = new StringBuilder();
-        Foreach (var c in context.Catalogs)
+
+        /* GET http://{dc-host}/Citrix/Monitor/Odata/v3/Data/Catalogs */
+        private static string ListAllCatalgs(MonitorService.DatabaseContext context)
         {
-            sb.Append(DisplayCatalog(c));
-        }
-        return sb.ToString();
-    }
-```
-
-<br />
-
-```java
-    /* GET http://Url/Machines()?$select=Name, IPAddress */
-    private static void ListMachineNames(MonitorService.DatabaseContext context)
-    {
-        var machines = from m in context.Machines select new { Name = m.Name, IP = m.IPAddress };
-        foreach (var m in machines)
-        {
-            if (m.Name != null && m.IP != null)
+            StringBuilder sb = new StringBuilder();
+            Foreach (var c in context.Catalogs)
             {
-                Console.WriteLine("{0} : {1}", m.Name, m.IP);
+                sb.Append(DisplayCatalog(c));
+            }
+            return sb.ToString();
+        }
+    
+
+  
+
+
+        /* GET http://Url/Machines()?$select=Name, IPAddress */
+        private static void ListMachineNames(MonitorService.DatabaseContext context)
+        {
+            var machines = from m in context.Machines select new { Name = m.Name, IP = m.IPAddress };
+            foreach (var m in machines)
+            {
+                if (m.Name != null && m.IP != null)
+                {
+                    Console.WriteLine("{0} : {1}", m.Name, m.IP);
+                }
             }
         }
-    }
-```
+    
 
-<br />
+  
+
+
+        /* use the LINQ Skip and Take methods to skips the first 40 results and takes the next 10 */
+        /* GET http://{dc-host}/Citrix/Monitor/Odata/v3/Machines()?$orderby=Id desc&$skip=40&$top=10 */
+        private static void ListMachinesPaged(MonitorService.DatabaseContext context)
+        {
+            var machines =
+                (from m in context.Machines
+                 orderby m.Id descending
+                 select m).Skip(40).Take(10);
+    
+            foreach (var m in machines)
+            {
+                Console.WriteLine("{0}, {1}", m.Name, m.IPAddress);
+            }
+        }
+    
+    
+
+  
+
+
+        /* GET http://Url/Catalogs()?$filter=Name eq '$Name'*/
+        private static void ListCatalogByName(MonitorService.DatabaseContext context, string name)
+        {
+            var catalog = context.Catalogs.Where(c => c.Name == name).SingleOrDefault();
+            if (catalog != null)
+            {
+                DisplayCatalog(catalog);
+            }
+        }
+    
+
+### 示例 4.2 – Java
+
+**从基于 Odata4j v0.3 库的 Java 客户端调用 OData 服务：**
+
+<http://www.odata.org/libraries/>
+
+<http://odata4j.org/v/0.3/javadoc/>
+
+代码片段：
 
 ```java
-    /* use the LINQ Skip and Take methods to skips the first 40 results and takes the next 10 */
-    /* GET http://{dc-host}/Citrix/Monitor/Odata/v3/Machines()?$orderby=Id desc&$skip=40&$top=10 */
-    private static void ListMachinesPaged(MonitorService.DatabaseContext context)
-    {
-        var machines =
-            (from m in context.Machines
-             orderby m.Id descending
-             select m).Skip(40).Take(10);
-
-        foreach (var m in machines)
-        {
-            Console.WriteLine("{0}, {1}", m.Name, m.IPAddress);
-        }
-    }
-
+// create consumer instance
+String serviceUrl = "http://{dc-host}/Citrix/Monitor/Odata/v1/Data/";
+ODataConsumer consumer = ODataConsumer.create(serviceUrl);
 ```
-
-<br />
 
 ```java
-    /* GET http://Url/Catalogs()?$filter=Name eq '$Name'*/
-    private static void ListCatalogByName(MonitorService.DatabaseContext context, string name)
-    {
-        var catalog = context.Catalogs.Where(c => c.Name == name).SingleOrDefault();
-        if (catalog != null)
-        {
-            DisplayCatalog(catalog);
-        }
-    }
+// ================General Query================================
+Enumerable<String> qEntitySets = consumer.getEntitySets();
+System.out.println(qEntitySets.first().toString());
+
+
+Enumerable<OEntity> qList = consumer.getEntities(qEntitySets.first()).execute();        
+System.out.println(qList.first().toString());       
+
+OEntity qEntity = qList.first();
+System.out.println(qEntity.getProperties().get(0));
+
+OProperty<?> qProperty = qEntity.getProperties().get(0);
+System.out.println(qProperty.getName());
+System.out.println(qProperty.getType());
+System.out.println(qProperty.getValue());
 ```
 
-<br />
+```java
+// =================Filter Query===========================================
+/* GET http://{dc-host}/Citrix/Monitor/Odata/v1/Data/Machines */
+String entitySetName = "Machines";        
+qList = consumer.getEntities(entitySetName).execute();
+System.out.println(qList.first().toString());
 
-# 附录：
+/* GET http://{dc-host}/Citrix/Monitor/Odata/v1/Data/Machines()?$select=Name, IPAddress */
+qList = consumer.getEntities(entitySetName).select("Name,IPAddress").execute();
+System.out.println(qList.first().toString());
+
+/* GET http://{dc-host}/Citrix/Monitor/Odata/v1/Machines()?$orderby=Id desc&$skip=40&$top=10 */
+qList = consumer.getEntities(entitySetName).orderBy("Id desc").skip(2).top(10).execute();
+System.out.println(qList.first().toString());
+
+/* GET http://{dc-host}/Citrix/Monitor/Odata/v1/Machines()?$filter=Name eq '$Name'*/
+qList = consumer.getEntities(entitySetName).filter("Name eq 'DOMAIN\\HOSTNAME'").execute();
+System.out.println(qList.first().toString());
+```
+
+# 附录
 
 ## 可用数据集的 URL
 

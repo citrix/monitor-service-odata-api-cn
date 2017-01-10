@@ -1,4 +1,3 @@
----
 site_name: Citrix Director SDK
 site_description: Citrix Director SDK 参考指南
 theme_dir: theme_onepage
@@ -6,9 +5,7 @@ repo_url: 'https://github.com/ajitchelat/AppDNA-SDK.git'
 markdown_extensions:
   - admonition
   - codehilite
-  - 
-    toc:
-      anchorlink: true
+  - toc:
+     anchorlink: true
 pages:
-  - 
-    Index: index.md
+  - Index: index.md

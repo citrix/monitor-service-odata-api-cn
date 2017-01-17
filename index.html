@@ -106,7 +106,7 @@ https://www.citrix.com/etc/designs/citrix/icon-favicon.png">
             <li><a href="#4">示例 4 – 客户端库</a></li>
         
     
-        <li class="main "><a href="#_6">附录：</a></li>
+        <li class="main "><a href="#_6">附录</a></li>
         
             <li><a href="#url">可用数据集的 URL</a></li>
         
@@ -146,7 +146,7 @@ https://www.citrix.com/etc/designs/citrix/icon-favicon.png">
             <div class="section">
              
                 <h1 id="_1"><a class="toclink" href="#_1">简介</a></h1>
-<p>Monitor Service API 在使用在处理和合并期间填充的 Windows Communication Foundation (WCF) Data Services 的 SQL Server 数据库的基础上构建。</p>
+<p>Monitor Service API 在使用 Windows Communication Foundation (WCF) Data Services（在处理和合并期间填充）的 SQL Server 数据库的基础上构建。</p>
 <p>Monitor Service API 使用开放数据协议 (OData)。此协议是一个用于查询和更新数据的 Web 协议，并基于诸如 HTTP 之类的 Web 技术而构建。</p>
 <p>Monitor Service API 是一个基于 REST 的 API，可以使用 OData 使用者程序进行访问。OData 使用者程序是占用使用 OData 协议显示的数据的应用程序。</p>
 <p>您可以使用 API 执行以下操作：</p>
@@ -168,7 +168,7 @@ https://www.citrix.com/etc/designs/citrix/icon-favicon.png">
 <p>以下类型的数据可通过 Monitor Service API 获得：</p>
 <ul>
 <li>
-<p><span id="par_richtext_0" class="anchor"></span>与连接故障相关的数据</p>
+<p>与连接故障相关的数据</p>
 </li>
 <li>
 <p>处于故障状态的计算机</p>
@@ -193,16 +193,16 @@ https://www.citrix.com/etc/designs/citrix/icon-favicon.png">
 <p>要确定 Monitor Service OData API 返回的值，请参阅 <a href="http://support.citrix.com/help/monitorserviceapi/7.6/html/d787ce1d-02c0-6165-fc99-c46592a5d112.htm">Citrix Monitor 数据模型</a></p>
 <h1 id="monitor-service"><a class="toclink" href="#monitor-service">如何访问 Monitor Service 数据</a></h1>
 <h2 id="_2"><a class="toclink" href="#_2">数据访问权限</a></h2>
-<p>您必须是 XenApp 或 XenDesktop 管理员，才能使用 Monitor Service OData API。 要调用 API，您需要具有只读权限；但是，返回的数据由 XenApp 或 XenDesktop 管理员角色和权限决定。</p>
+<p>要使用 Monitor Service OData API，您必须是 XenApp 或 XenDesktop 管理员。 要调用 API，您需要具有只读权限；但是，返回的数据由 XenApp 或 XenDesktop 管理员角色和权限决定。</p>
 <p>例如，交付组管理员可以调用 Monitor Service API，但他们可以获取的数据由使用 Citrix Studio 设置的交付组访问权限控制。</p>
 <p>有关 XenApp 或 XenDesktop 管理员角色和权限的详细信息，请参阅<a href="http://docs.citrix.com/en-us/xenapp-and-xendesktop/7-6/xad-security-article/xad-delegated-admin.html">委派管理</a>。</p>
 <h2 id="_3"><a class="toclink" href="#_3">数据访问安全性</a></h2>
 <p>如果选择使用 SSL，则必须在站点内的所有 Delivery Controller 上配置 SSL。不能同时使用 SSL 和非 SSL。</p>
-<p>要使用 SSL 为 Monitor Service 端点提供安全保护，必须执行以下配置。 某些步骤需要在每个站点一次性完成，其余步骤则必须在站点中托管 Monitor Service 的每台计算机上执行。 各步骤的说明如下所述。</p>
+<p>要使用 SSL 为 Monitor Service 端点提供安全保护，必须执行以下配置。 有些步骤需要在每个站点一次性完成，其余步骤则须在站点中托管 Monitor Service 的计算机上执行。 各步骤的说明如下所述。</p>
 <p><strong><em>第 1 部分：在系统中注册证书</em></strong></p>
 <ol>
 <li>
-<p><span id="par_richtext_2" class="anchor"></span>使用可信证书管理器创建证书。证书必须与您希望用于 OData SSL 的计算机上的端口相关联。</p>
+<p>使用可信证书管理器创建证书。证书必须与您希望用于 OData SSL 的计算机上的端口相关联。</p>
 </li>
 <li>
 <p>配置 Monitor Service，以使用此端口进行 SSL 通信。操作步骤取决于您的环境及其与证书结合使用的方式。下例说明了如何配置端口 449：</p>
@@ -242,9 +242,11 @@ Reset-MonitorServiceGroupMembership</p>
 </li>
 </ol>
 <h2 id="_4"><a class="toclink" href="#_4">数据访问协议</a></h2>
-<p>Monitor Service API 是一个基于 REST 的 API，可以使用 OData 使用者程序进行访问。 OData 使用者程序是占用使用 OData 协议显示的数据的应用程序。 从简单的 Web 浏览器到可利用 OData 协议的所有功能的自定义应用程序，OData 使用者程序的复杂程度各不相同。</p>
+<p>Monitor Service API 是一款基于 REST 的 API，可以使用 OData 使用者程序进行访问。 OData 使用者程序是占用使用 OData 协议显示的数据的应用程序。 从简单的 Web 浏览器到可利用 OData 协议的所有功能的自定义应用程序，OData 使用者程序的复杂程度各不相同。</p>
 <p>Monitor Service 数据模型的每一部分都可访问，并且可以根据 URL 进行过滤。OData 以 URL 格式提供查询语言，可用于从服务检索条目。</p>
-<p>查询在服务器端进行处理，并且可以使用客户端上的 OData 协议进行进一步过滤。<span id="par_richtext_7" class="anchor"></span>建模数据分为以下三类：聚合数据（汇总表）、对象（计算机、会话等）的当前状态和日志数据，日志数据（实际上是指历史事件，例如连接）。<span id="par_richtext_8" class="anchor"></span><strong>注意</strong>：OData 协议不支持枚举；在其位置使用整数。 要确定 Monitor Service OData API 返回的值，请参阅<strong> </strong><a href="http://support.citrix.com/help/monitorserviceapi/7.6/">Monitor Service 数据模型</a>。</p>
+<p>查询在服务器端进行处理，并且可以使用客户端上的 OData 协议进行进一步过滤。</p>
+<p>建模数据分为以下三类：聚合数据（汇总表）、对象（计算机、会话等）的当前状态和日志数据，日志数据实际上是指历史事件（如连接）。</p>
+<p><strong>注意</strong>：OData 协议不支持枚举；在其位置使用整数。 要确定 Monitor Service OData API 返回的值，请参阅<a href="http://support.citrix.com/help/monitorserviceapi/7.6/">Monitor Service 数据模型</a>。</p>
 <h3 id="odata"><a class="toclink" href="#odata">OData 协议是什么？</a></h3>
 <p><a href="http://www.odata.org/">OData</a>（开放数据协议）是一种 <a href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=odata">OASIS 标准</a>，用于定义构建和使用 RESTful API 的一组最佳实践。 OData 可帮助您在构建 RESTful API 的过程中重点关注业务逻辑，不必担心用于定义请求和响应头、状态代码、HTTP 方法、URL 约定、媒体类型、负载格式、查询选项等各种方法。</p>
 <p>OData 还提供跟踪变更、定义可重用过程的功能/操作以及发送异步/批处理请求的指导。</p>
@@ -273,7 +275,7 @@ Reset-MonitorServiceGroupMembership</p>
 <p>安装 Microsoft Excel。</p>
 </li>
 <li>
-<p>按照此处的说明安装 PowerPivot（具体取决于您使用的版本是 2010 还是 2013）：<a href="https://support.office.com/en-us/article/Start-Power-Pivot-in-Microsoft-Excel-2013-add-in-a891a66d-36e3-43fc-81e8-fc4798f39ea8">https://support.office.com/en-us/article/Start-Power-Pivot-in-Microsoft-Excel-2013-add-in-a891a66d-36e3-43fc-81e8-fc4798f39ea8.</a></p>
+<p>请按照以下站点上的说明安装 PowerPivot（取决于您是否使用 2010 或 2013）：[https://support.office.com/en-us/article/Start-Power-Pivot-in-Microsoft-Excel-2013-add-in-a891a66d-36e3-43fc-81e8-fc4798f39ea8.]。</p>
 </li>
 <li>
 <p>打开 Excel（使用 XenApp 或 XenDesktop 站点的相应管理权限运行）。</p>
@@ -325,10 +327,10 @@ Reset-MonitorServiceGroupMembership</p>
 <h2 id="3-linqpad"><a class="toclink" href="#3-linqpad">示例 3 - LinqPad</a></h2>
 <ol>
 <li>
-<p><span id="par_richtext_10" class="anchor"></span>从 <a href="http://www.linqpad.net/">http://www.linqpad.net</a> 下载并安装最新版本的 LinqPad。</p>
+<p>从 <a href="http://www.linqpad.net/">http://www.linqpad.net</a> 下载并安装最新版本的 LinqPad。</p>
 </li>
 <li>
-<p>使用 XenApp 或 XenDesktop 站点的相应管理权限运行 LinqPad。</p>
+<p>通过 XenApp 或 XenDesktop 站点的相应管理权限运行 LinqPad。</p>
 </li>
 </ol>
 <blockquote>
@@ -342,9 +344,7 @@ Reset-MonitorServiceGroupMembership</p>
 <p>选择 WCF Data Services 5.1 (OData 3) 并单击<strong>下一步</strong>。</p>
 </li>
 <li>
-<p>输入数据馈送 URL：<span id="OLE_LINK2" class="anchor"><span
-id="OLE_LINK3"
-class="anchor"></span></span>http://{dc-host}/Citrix/Monitor/OData/v1/Data（如果使用的是 SSL，请输入 https:）。 如有必要，请输入用户名和密码以访问 Delivery Controller。 单击<strong>确定</strong>。</p>
+<p>输入数据馈送 URL http://{dc-host}/Citrix/Monitor/OData/v1/Data（如果正在使用 SSL，则输入 https://{dc-host}/Citrix/Monitor/OData/v1/Data）。 如有必要，请输入用户名和密码以访问 Delivery Controller。 单击<strong>确定</strong>。</p>
 </li>
 <li>
 <p>现在您可以针对数据馈送运行 LINQ 查询，并根据需要导出数据。 例如，在“目录”上单击鼠标右键并选择 <strong>Catalogs.Take(100)</strong>。 此操作将返回数据库中前 100 个目录。 选择“导出”&gt;“导出到具有格式设置的 Excel”。</p>
@@ -355,69 +355,121 @@ class="anchor"></span></span>http://{dc-host}/Citrix/Monitor/OData/v1/Data（如
 <h3 id="41-c35net"><a class="toclink" href="#41-c35net">示例 4.1 – C#/.NET</a></h3>
 <p><strong><em>从 .NET 客户端调用 OData 服务 (C#)</em></strong></p>
 <p><a href="https://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/odata-v3/calling-an-odata-service-from-a-net-client">https://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/odata-v3/calling-an-odata-service-from-a-net-client</a></p>
-<p>代码片段： <br /></p>
-<div class="codehilite"><pre><span></span>    <span class="cm">/* GET http://{dc-host}/Citrix/Monitor/Odata/v3/Data/Catalogs */</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="n">string</span> <span class="nf">ListAllCatalgs</span><span class="o">(</span><span class="n">MonitorService</span><span class="o">.</span><span class="na">DatabaseContext</span> <span class="n">context</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
-        <span class="n">Foreach</span> <span class="o">(</span><span class="n">var</span> <span class="n">c</span> <span class="n">in</span> <span class="n">context</span><span class="o">.</span><span class="na">Catalogs</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="n">sb</span><span class="o">.</span><span class="na">Append</span><span class="o">(</span><span class="n">DisplayCatalog</span><span class="o">(</span><span class="n">c</span><span class="o">));</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">sb</span><span class="o">.</span><span class="na">ToString</span><span class="o">();</span>
-    <span class="o">}</span>
+<p>代码片段：   </p>
+<div class="codehilite"><pre><span></span><span class="x">    /* GET http://</span><span class="err">{</span><span class="x">dc-host}/Citrix/Monitor/Odata/v3/Data/Catalogs */</span>
+<span class="x">    private static string ListAllCatalgs(MonitorService.DatabaseContext context)</span>
+<span class="x">    </span><span class="err">{</span><span class="x"></span>
+<span class="x">        StringBuilder sb = new StringBuilder();</span>
+<span class="x">        Foreach (var c in context.Catalogs)</span>
+<span class="x">        </span><span class="err">{</span><span class="x"></span>
+<span class="x">            sb.Append(DisplayCatalog(c));</span>
+<span class="x">        }</span>
+<span class="x">        return sb.ToString();</span>
+<span class="x">    }</span>
+
+
+
+
+
+<span class="x">    /* GET http://Url/Machines()?</span><span class="p">$</span><span class="nv">select</span><span class="x">=Name, IPAddress */</span>
+<span class="x">    private static void ListMachineNames(MonitorService.DatabaseContext context)</span>
+<span class="x">    </span><span class="err">{</span><span class="x"></span>
+<span class="x">        var machines = from m in context.Machines select new </span><span class="err">{</span><span class="x"> Name = m.Name, IP = m.IPAddress };</span>
+<span class="x">        foreach (var m in machines)</span>
+<span class="x">        </span><span class="err">{</span><span class="x"></span>
+<span class="x">            if (m.Name != null &amp;&amp; m.IP != null)</span>
+<span class="x">            </span><span class="err">{</span><span class="x"></span>
+<span class="x">                Console.WriteLine(&quot;</span><span class="err">{</span><span class="x">0} : </span><span class="err">{</span><span class="x">1}&quot;, m.Name, m.IP);</span>
+<span class="x">            }</span>
+<span class="x">        }</span>
+<span class="x">    }</span>
+
+
+
+
+
+<span class="x">    /* use the LINQ Skip and Take methods to skips the first 40 results and takes the next 10 */</span>
+<span class="x">    /* GET http://</span><span class="err">{</span><span class="x">dc-host}/Citrix/Monitor/Odata/v3/Machines()?</span><span class="p">$</span><span class="nv">orderby</span><span class="x">=Id desc&amp;</span><span class="p">$</span><span class="nv">skip</span><span class="x">=40&amp;</span><span class="p">$</span><span class="nv">top</span><span class="x">=10 */</span>
+<span class="x">    private static void ListMachinesPaged(MonitorService.DatabaseContext context)</span>
+<span class="x">    </span><span class="err">{</span><span class="x"></span>
+<span class="x">        var machines =</span>
+<span class="x">            (from m in context.Machines</span>
+<span class="x">             orderby m.Id descending</span>
+<span class="x">             select m).Skip(40).Take(10);</span>
+
+<span class="x">        foreach (var m in machines)</span>
+<span class="x">        </span><span class="err">{</span><span class="x"></span>
+<span class="x">            Console.WriteLine(&quot;</span><span class="err">{</span><span class="x">0}, </span><span class="err">{</span><span class="x">1}&quot;, m.Name, m.IPAddress);</span>
+<span class="x">        }</span>
+<span class="x">    }</span>
+
+
+
+
+
+
+<span class="x">    /* GET http://Url/Catalogs()?</span><span class="p">$</span><span class="nv">filter</span><span class="x">=Name eq &#39;</span><span class="p">$</span><span class="nv">Name</span><span class="x">&#39;*/</span>
+<span class="x">    private static void ListCatalogByName(MonitorService.DatabaseContext context, string name)</span>
+<span class="x">    </span><span class="err">{</span><span class="x"></span>
+<span class="x">        var catalog = context.Catalogs.Where(c =&gt; c.Name == name).SingleOrDefault();</span>
+<span class="x">        if (catalog != null)</span>
+<span class="x">        </span><span class="err">{</span><span class="x"></span>
+<span class="x">            DisplayCatalog(catalog);</span>
+<span class="x">        }</span>
+<span class="x">    }</span>
 </pre></div>
 
 
-<p><br /></p>
-<div class="codehilite"><pre><span></span>    <span class="cm">/* GET http://Url/Machines()?$select=Name, IPAddress */</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">ListMachineNames</span><span class="o">(</span><span class="n">MonitorService</span><span class="o">.</span><span class="na">DatabaseContext</span> <span class="n">context</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="n">var</span> <span class="n">machines</span> <span class="o">=</span> <span class="n">from</span> <span class="n">m</span> <span class="n">in</span> <span class="n">context</span><span class="o">.</span><span class="na">Machines</span> <span class="n">select</span> <span class="k">new</span> <span class="o">{</span> <span class="n">Name</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="na">Name</span><span class="o">,</span> <span class="n">IP</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="na">IPAddress</span> <span class="o">};</span>
-        <span class="n">foreach</span> <span class="o">(</span><span class="n">var</span> <span class="n">m</span> <span class="n">in</span> <span class="n">machines</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">m</span><span class="o">.</span><span class="na">Name</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">m</span><span class="o">.</span><span class="na">IP</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
-            <span class="o">{</span>
-                <span class="n">Console</span><span class="o">.</span><span class="na">WriteLine</span><span class="o">(</span><span class="s">&quot;{0} : {1}&quot;</span><span class="o">,</span> <span class="n">m</span><span class="o">.</span><span class="na">Name</span><span class="o">,</span> <span class="n">m</span><span class="o">.</span><span class="na">IP</span><span class="o">);</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
+<h3 id="42-java"><a class="toclink" href="#42-java">示例 4.2 – Java</a></h3>
+<p><strong>从基于 Odata4j v0.3 库的 Java 客户端调用 OData 服务：</strong></p>
+<p><a href="http://www.odata.org/libraries/">http://www.odata.org/libraries/</a></p>
+<p><a href="http://odata4j.org/v/0.3/javadoc/">http://odata4j.org/v/0.3/javadoc/</a></p>
+<p>代码片段：</p>
+<div class="codehilite"><pre><span></span><span class="c1">// create consumer instance</span>
+<span class="n">String</span> <span class="n">serviceUrl</span> <span class="o">=</span> <span class="s">&quot;http://{dc-host}/Citrix/Monitor/Odata/v1/Data/&quot;</span><span class="o">;</span>
+<span class="n">ODataConsumer</span> <span class="n">consumer</span> <span class="o">=</span> <span class="n">ODataConsumer</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">serviceUrl</span><span class="o">);</span>
 </pre></div>
 
 
-<p><br /></p>
-<div class="codehilite"><pre><span></span>    <span class="cm">/* use the LINQ Skip and Take methods to skips the first 40 results and takes the next 10 */</span>
-    <span class="cm">/* GET http://{dc-host}/Citrix/Monitor/Odata/v3/Machines()?$orderby=Id desc&amp;$skip=40&amp;$top=10 */</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">ListMachinesPaged</span><span class="o">(</span><span class="n">MonitorService</span><span class="o">.</span><span class="na">DatabaseContext</span> <span class="n">context</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="n">var</span> <span class="n">machines</span> <span class="o">=</span>
-            <span class="o">(</span><span class="n">from</span> <span class="n">m</span> <span class="n">in</span> <span class="n">context</span><span class="o">.</span><span class="na">Machines</span>
-             <span class="n">orderby</span> <span class="n">m</span><span class="o">.</span><span class="na">Id</span> <span class="n">descending</span>
-             <span class="n">select</span> <span class="n">m</span><span class="o">).</span><span class="na">Skip</span><span class="o">(</span><span class="mi">40</span><span class="o">).</span><span class="na">Take</span><span class="o">(</span><span class="mi">10</span><span class="o">);</span>
+<div class="codehilite"><pre><span></span><span class="c1">// ================General Query================================</span>
+<span class="n">Enumerable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">qEntitySets</span> <span class="o">=</span> <span class="n">consumer</span><span class="o">.</span><span class="na">getEntitySets</span><span class="o">();</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">qEntitySets</span><span class="o">.</span><span class="na">first</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
 
-        <span class="n">foreach</span> <span class="o">(</span><span class="n">var</span> <span class="n">m</span> <span class="n">in</span> <span class="n">machines</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="n">Console</span><span class="o">.</span><span class="na">WriteLine</span><span class="o">(</span><span class="s">&quot;{0}, {1}&quot;</span><span class="o">,</span> <span class="n">m</span><span class="o">.</span><span class="na">Name</span><span class="o">,</span> <span class="n">m</span><span class="o">.</span><span class="na">IPAddress</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
+
+<span class="n">Enumerable</span><span class="o">&lt;</span><span class="n">OEntity</span><span class="o">&gt;</span> <span class="n">qList</span> <span class="o">=</span> <span class="n">consumer</span><span class="o">.</span><span class="na">getEntities</span><span class="o">(</span><span class="n">qEntitySets</span><span class="o">.</span><span class="na">first</span><span class="o">()).</span><span class="na">execute</span><span class="o">();</span>        
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">qList</span><span class="o">.</span><span class="na">first</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>       
+
+<span class="n">OEntity</span> <span class="n">qEntity</span> <span class="o">=</span> <span class="n">qList</span><span class="o">.</span><span class="na">first</span><span class="o">();</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">qEntity</span><span class="o">.</span><span class="na">getProperties</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">));</span>
+
+<span class="n">OProperty</span><span class="o">&lt;?&gt;</span> <span class="n">qProperty</span> <span class="o">=</span> <span class="n">qEntity</span><span class="o">.</span><span class="na">getProperties</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">qProperty</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">qProperty</span><span class="o">.</span><span class="na">getType</span><span class="o">());</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">qProperty</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span>
 </pre></div>
 
 
-<p><br /></p>
-<div class="codehilite"><pre><span></span>    <span class="cm">/* GET http://Url/Catalogs()?$filter=Name eq &#39;$Name&#39;*/</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">ListCatalogByName</span><span class="o">(</span><span class="n">MonitorService</span><span class="o">.</span><span class="na">DatabaseContext</span> <span class="n">context</span><span class="o">,</span> <span class="n">string</span> <span class="n">name</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="n">var</span> <span class="n">catalog</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="na">Catalogs</span><span class="o">.</span><span class="na">Where</span><span class="o">(</span><span class="n">c</span> <span class="o">=&gt;</span> <span class="n">c</span><span class="o">.</span><span class="na">Name</span> <span class="o">==</span> <span class="n">name</span><span class="o">).</span><span class="na">SingleOrDefault</span><span class="o">();</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">catalog</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="n">DisplayCatalog</span><span class="o">(</span><span class="n">catalog</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
+<div class="codehilite"><pre><span></span><span class="c1">// =================Filter Query===========================================</span>
+<span class="cm">/* GET http://{dc-host}/Citrix/Monitor/Odata/v1/Data/Machines */</span>
+<span class="n">String</span> <span class="n">entitySetName</span> <span class="o">=</span> <span class="s">&quot;Machines&quot;</span><span class="o">;</span>        
+<span class="n">qList</span> <span class="o">=</span> <span class="n">consumer</span><span class="o">.</span><span class="na">getEntities</span><span class="o">(</span><span class="n">entitySetName</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">qList</span><span class="o">.</span><span class="na">first</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
+
+<span class="cm">/* GET http://{dc-host}/Citrix/Monitor/Odata/v1/Data/Machines()?$select=Name, IPAddress */</span>
+<span class="n">qList</span> <span class="o">=</span> <span class="n">consumer</span><span class="o">.</span><span class="na">getEntities</span><span class="o">(</span><span class="n">entitySetName</span><span class="o">).</span><span class="na">select</span><span class="o">(</span><span class="s">&quot;Name,IPAddress&quot;</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">qList</span><span class="o">.</span><span class="na">first</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
+
+<span class="cm">/* GET http://{dc-host}/Citrix/Monitor/Odata/v1/Machines()?$orderby=Id desc&amp;$skip=40&amp;$top=10 */</span>
+<span class="n">qList</span> <span class="o">=</span> <span class="n">consumer</span><span class="o">.</span><span class="na">getEntities</span><span class="o">(</span><span class="n">entitySetName</span><span class="o">).</span><span class="na">orderBy</span><span class="o">(</span><span class="s">&quot;Id desc&quot;</span><span class="o">).</span><span class="na">skip</span><span class="o">(</span><span class="mi">2</span><span class="o">).</span><span class="na">top</span><span class="o">(</span><span class="mi">10</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">qList</span><span class="o">.</span><span class="na">first</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
+
+<span class="cm">/* GET http://{dc-host}/Citrix/Monitor/Odata/v1/Machines()?$filter=Name eq &#39;$Name&#39;*/</span>
+<span class="n">qList</span> <span class="o">=</span> <span class="n">consumer</span><span class="o">.</span><span class="na">getEntities</span><span class="o">(</span><span class="n">entitySetName</span><span class="o">).</span><span class="na">filter</span><span class="o">(</span><span class="s">&quot;Name eq &#39;DOMAIN\\HOSTNAME&#39;&quot;</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">qList</span><span class="o">.</span><span class="na">first</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
 </pre></div>
 
 
-<p><br /></p>
-<h1 id="_6"><a class="toclink" href="#_6">附录：</a></h1>
+<h1 id="_6"><a class="toclink" href="#_6">附录</a></h1>
 <h2 id="url"><a class="toclink" href="#url">可用数据集的 URL</a></h2>
 <table>
 <thead>
@@ -525,5 +577,5 @@ class="anchor"></span></span>http://{dc-host}/Citrix/Monitor/OData/v1/Data（如
 
 <!--
 MkDocs version : 0.15.3
-Build Date UTC : 2017-01-10 04:17:59.504895
+Build Date UTC : 2017-01-17 05:30:36.053510
 -->
